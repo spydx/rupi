@@ -22,15 +22,13 @@ objdump / objcopy
 brew install --cask gcc-arm-embedded
 ```
 
-## cargo buil   d
+## cargo build
 
 ```sh
 cargo rustc -- -C link-arg=--script=./linker.ld
 ```
 
 ## objdump usage
-
-objdump - usage command
 
 ```sh
 arm-none-eabi-objdump -D target/armv7a-none-eabi/debug/rupi | less
