@@ -7,14 +7,14 @@ Small OS for Raspberry Pi boards built with Rust.
 Expect all rust tools to be installed (rustup and cargo)
 
 ```sh
-> rustup target add armv7a-none-eabi
+rustup target add armv7a-none-eabi
 ```
 
 ```sh
 brew install --cask gcc-arm-embedded
 ```
 
-objdump / objcopy 
+objdump / objcopy
 
 ```sh
 brew install --cask gcc-arm-embedded
@@ -32,7 +32,7 @@ cargo rustc -- -C link-arg=--script=./linker.ld
 objdump - usage command
 
 ```sh
-> arm-none-eabi-objdump -D target/armv7a-none-eabi/debug/rupi | less
+arm-none-eabi-objdump -D target/armv7a-none-eabi/debug/rupi | less
 ```
 
 ## objcopy usage
