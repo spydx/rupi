@@ -1,6 +1,8 @@
 # RuPi
 
 Small OS for Raspberry Pi boards built with Rust.
+There is no plan, maybe take some input at one point.
+Right now it just serves as a shell to get started with OSDev on Raspberry Pi with Rust.
 
 ## Software needed
 
