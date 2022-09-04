@@ -26,7 +26,6 @@ brew install --cask gcc-arm-embedded
 cargo rustc -- -C link-arg=--script=./linker.ld
 ```
 
-
 ## objdump usage
 
 objdump - usage command
@@ -43,7 +42,7 @@ arm-none-eabi-objcopy -O binary target/armv7a-none-eabi/debug/rupi ./kernel7.img
 
 ## Raspberry firmware repo
 
-[Raspberry Pi Firmware Repo](https://github.com/raspberrypi/firmware)
+Raspberry Pi Firmware Repo [https://github.com/raspberrypi/firmware](https://github.com/raspberrypi/firmware)
 
 Download:
 
@@ -53,5 +52,6 @@ Download:
 
 ## Sources
 
-Video: https://www.youtube.com/watch?v=jZT8APrzvc4
-BCM2837 datasheet: https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf
+Source Video: [https://www.youtube.com/watch?v=jZT8APrzvc4](https://www.youtube.com/watch?v=jZT8APrzvc4)
+
+BCM2837 datasheet: [https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf](https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf)
