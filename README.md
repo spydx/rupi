@@ -10,13 +10,11 @@ Expect all rust tools to be installed (rustup and cargo)
 > rustup target add armv7a-none-eabi
 ```
 
-objdump - usage command
-
 ```sh
-> objdump -D target/armv7a-none-eabi/debug/rupi | less
+brew install --cask gcc-arm-embedded
 ```
 
-objcopy
+objdump / objcopy 
 
 ```sh
 brew install --cask gcc-arm-embedded
@@ -24,23 +22,36 @@ brew install --cask gcc-arm-embedded
 
 ## cargo build
 
+```sh
 cargo rustc -- -C link-arg=--script=./linker.ld
+```
 
-## objcopy command
 
+## objdump usage
+
+objdump - usage command
+
+```sh
+> arm-none-eabi-objdump -D target/armv7a-none-eabi/debug/rupi | less
+```
+
+## objcopy usage
+
+```sh
 arm-none-eabi-objcopy -O binary target/armv7a-none-eabi/debug/rupi ./kernel7.img
+```
 
 ## Raspberry firmware repo
 
-https://github.com/raspberrypi/firmware
+[Raspberry Pi Firmware Repo](https://github.com/raspberrypi/firmware)
 
 Download:
 
-fixup.dat
-start.elf
-bootcode.bin
+- fixup.dat
+- start.elf
+- bootcode.bin
 
-
+## Sources
 
 Video: https://www.youtube.com/watch?v=jZT8APrzvc4
 BCM2837 datasheet: https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf
