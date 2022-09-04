@@ -22,7 +22,7 @@ objdump / objcopy
 brew install --cask gcc-arm-embedded
 ```
 
-## cargo build
+## cargo buil   d
 
 ```sh
 cargo rustc -- -C link-arg=--script=./linker.ld
