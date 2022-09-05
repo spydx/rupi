@@ -32,10 +32,10 @@ pub extern "C" fn _start() -> ! {
 }
 
 fn sleep(sec: i32) -> () {
-    let seconds = sec * 10000;
+    let ms: i32 = sec * 10000;
 
     unsafe {
-        for _ in 1..seconds {
+        for _ in 1..ms {
             asm!("nop")
         }
     }
