@@ -16,4 +16,5 @@ wget -P ./out https://github.com/raspberrypi/firmware/raw/master/boot/bootcode.b
 wget -P ./out https://github.com/raspberrypi/firmware/raw/master/boot/start.elf
 wget -P ./out https://github.com/raspberrypi/firmware/raw/master/boot/fixup.dat
 
-cp -R ./out/ /Volumes/RUPI
+cp -R ./out/ /Volumes/BOOT
+cp config.txt /Volumes/BOOT

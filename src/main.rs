@@ -8,6 +8,9 @@ mod boot {
 
     global_asm!(".section .text._start");
 }
+
+static HELLO: &[u8] = b"RuPi says Hello!";
+
 #[allow(non_snake_case)]
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
@@ -17,6 +20,15 @@ pub extern "C" fn _start() -> ! {
     let SET_OUTPUT = 1 << 3;
     let TURN_ON = 1 << 21;
     let TURN_OFF = 1 << 21;
+
+    let vga_buffer = 0xb8000 as *mut u8;
+
+    for (i, &byte) in HELLO.iter().enumerate() {
+        unsafe {
+            *vga_buffer.offset(i as isize * 2) = byte;
+            *vga_buffer.offset(i as isize * 2 + 1) = 0xb;
+        }
+    }
 
     unsafe {
         core::ptr::write_volatile(FSELECT as *mut i32, SET_OUTPUT);

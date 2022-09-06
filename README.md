@@ -55,3 +55,5 @@ Download:
 Source Video: [https://www.youtube.com/watch?v=jZT8APrzvc4](https://www.youtube.com/watch?v=jZT8APrzvc4)
 
 BCM2837 datasheet: [https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf](https://cs140e.sergio.bz/docs/BCM2837-ARM-Peripherals.pdf)
+
+[OS Dev on RPi2b](https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials)
