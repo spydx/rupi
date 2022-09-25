@@ -1,14 +1,14 @@
 #![no_std]
 #![no_main]
 
-use core::{arch::asm, panic::PanicInfo};
+#![doc(
+    html_logo_url = "https://raw.githubusercontent.com/rust-embedded/wg/master/assets/logo/ewg-logo-blue-white-on-transparent.png"
+)]
 
-mod boot {
-    use core::arch::global_asm;
-
-    global_asm!(".section .text._start");
-}
-
+mod bsp;
+mod cpu;
+mod panic_wait;
+/*
 static HELLO: &[u8] = b"RuPi says Hello!";
 
 #[allow(non_snake_case)]
@@ -53,11 +53,7 @@ fn sleep(sec: i32) -> () {
     }
 }
 
-#[panic_handler]
-fn panic(_info: &PanicInfo) -> ! {
-    loop {}
-}
-
 // 3f20_0008 fsel2 1<<3 turn pin21 into an output
 // 3f20_001c gpiol_set 1<<21 turn pin 21 on
 // 3f20_0028 gpiol_clean 1<<21 turn pin 21 off
+ */
