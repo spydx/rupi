@@ -1,19 +1,20 @@
-## include common/format.mk
-## include common/docker.mk
+include common/format.mk
+include common/docker.mk
 
 BSP ?= rpi2b
+#BSP ?= rpi3
 
 QEMU_MISSING_STRING = "This board is not supported for QEMU"
 
 ifeq ($(BSP), rpi2b)
-	TARGET				= armv7a-none-eabi
+	TARGET				= aarch64-unknown-none-softfloat
 	KERNEL_BIN 			= kenel7.img
-	QEMU_BINARY 		= qemu-system-arm
+	QEMU_BINARY 		= qemu-system-aarch64
 	QEMU_MACHINE_TYPE 	= raspi2
 	QEMU_RELEASE_ARGS 	= -d in_asm -display none
-	OBJDUMP_BINARY		= arm-none-eabi-objdump
-	NM_BINARY 			= arm-none-eabi-nm
-	READELF_BINARY		= arm-none-eabi-readelf
+	OBJDUMP_BINARY		= aarch64-none-elf-objdump
+	NM_BINARY 			= aarch64-none-elf-nm
+	READELF_BINARY		= aarch64-none-elf-readelf
 	LD_SCRIPT_PATH 		= $(shell pwd)/src/bsp/raspberrypi
 	RUSTC_MISC_ARGS		= -C target-cpu=cortex-a53
 else ifeq ($(BSP),rpi3)

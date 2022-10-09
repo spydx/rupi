@@ -6,7 +6,7 @@ Right now it just serves as a shell to get started with OSDev on Raspberry Pi wi
 
 ## Guide Progress
 
-- [ ] 00 before_we_start
+- [x] 00 before_we_start
 - [ ] 01 wait_forever
 - [ ] 02 runtime_init
 - [ ] 03 hacky_hello_world
