@@ -7,16 +7,16 @@ BSP ?= rpi2b
 QEMU_MISSING_STRING = "This board is not supported for QEMU"
 
 ifeq ($(BSP), rpi2b)
-	TARGET				= aarch64-unknown-none-softfloat
+	TARGET				= armv7a-none-eabi
 	KERNEL_BIN 			= kernel7.img
-	QEMU_BINARY 		= qemu-system-aarch64
-	QEMU_MACHINE_TYPE 	= raspi2
+	QEMU_BINARY 		= qemu-system-arm
+	QEMU_MACHINE_TYPE 	= raspi2b
 	QEMU_RELEASE_ARGS 	= -d in_asm -display none
 	OBJDUMP_BINARY		= aarch64-none-elf-objdump
 	NM_BINARY 			= aarch64-none-elf-nm
 	READELF_BINARY		= aarch64-none-elf-readelf
-	LD_SCRIPT_PATH 		= $(shell pwd)/src/bsp/raspberrypi
-	RUSTC_MISC_ARGS		= -C target-cpu=cortex-a53
+	LD_SCRIPT_PATH 		= $(shell pwd)/src/bsp/rpi2b
+	RUSTC_MISC_ARGS		= -C target-cpu=cortex-a7 -Clinker-plugin-lto
 else ifeq ($(BSP),rpi3)
     TARGET            = aarch64-unknown-none-softfloat
     KERNEL_BIN        = kernel8.img
