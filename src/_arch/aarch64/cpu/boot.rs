@@ -2,7 +2,8 @@ use core::arch::global_asm;
 
 global_asm!(
     include_str!("boot.s"),
-    CONST_COREID_MASK = const 0b11);
+    CONST_COREID_MASK = const 0b11
+);
 
 
 // The Rust entry of the `kernel` binary

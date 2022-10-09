@@ -4,11 +4,35 @@ Small OS for Raspberry Pi boards built with Rust.
 There is no plan, maybe take some input at one point.
 Right now it just serves as a shell to get started with OSDev on Raspberry Pi with Rust.
 
+## Details about the Raspberry Pi HW
+
+[Source](https://www.raspberrypi.com/documentation/computers/processors.html)
+
+### Pi2 b
+
+From the webpage:
+The Broadcom chip used in the Raspberry Pi 2 Model B. The underlying architecture in BCM2836 is identical to BCM2835. The only significant difference is the removal of the ARM1176JZF-S processor and replacement with a quad-core Cortex-A7 cluster.
+
+### Pi3 b and Pi2b v1.2
+
+This is the Broadcom chip used in the Raspberry Pi 3 Model B, later models of the Raspberry Pi 2 Model B, and the Raspberry Pi Compute Module 3. The underlying architecture of the BCM2837 is identical to the BCM2836. The only significant difference is the replacement of the ARMv7 quad-core cluster with a quad-core ARM Cortex A53 (ARMv8) cluster.
+
+[Docs](./docs/) are downloaded into `./docs/` folder
+
+| Board | Chip |
+|---|---|
+| RPi1      |   BCM2835 |
+| RPi2b     |   BCM2836 |
+| RPi3b     |   BCM2837 |
+| RPi3b+    |   BCM2837B0 |
+| RPi4b     |   BCM2711 |
+
 ## Guide Progress
 
 - [x] 00 before_we_start
-- [ ] 01 wait_forever
+- [x] 01 wait_forever
 - [ ] 02 runtime_init
+    In this part we have implemented such as described, but the output from `make qemu` is different from the source project. This might come from we are "building" for RPi2b.
 - [ ] 03 hacky_hello_world
 - [ ] 04 safe_globals
 - [ ] 05 drivers_gpio_uart

@@ -8,7 +8,7 @@ QEMU_MISSING_STRING = "This board is not supported for QEMU"
 
 ifeq ($(BSP), rpi2b)
 	TARGET				= aarch64-unknown-none-softfloat
-	KERNEL_BIN 			= kenel7.img
+	KERNEL_BIN 			= kernel7.img
 	QEMU_BINARY 		= qemu-system-aarch64
 	QEMU_MACHINE_TYPE 	= raspi2
 	QEMU_RELEASE_ARGS 	= -d in_asm -display none
